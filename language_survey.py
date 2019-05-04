@@ -1,0 +1,23 @@
+# _*_ coding :UTF-8 _*_
+# 开发人员：C
+# 开发时间：2019/5/4 9:51
+# 文件名称：language_survey.py
+# 开发软件：PyCharm
+from survey import AnonymousSurvey
+
+#定义一个问题，并创建一个表示调查的AnonymousSurvey对象
+question = "What language did you first learn to speak?"
+my_survey = AnonymousSurvey(question)
+
+#显示问题并存储答案
+my_survey.show_question()
+print("Enter 'q' at any time to quit.\n")
+while True:
+    response = input("Language:")
+    if response == 'q':
+        break
+    my_survey.stored_response(response)
+
+#显示调查结果
+print("\nThank you to everyone who participated in the survey!")
+my_survey.show_results()
